@@ -76,54 +76,56 @@ section {
 	text-align:center;
 }
 
-.ship-1,
-.ship-2,
-.ship-3,
-.ship-4,
-.ship {
-	width: 150px;
+.ships {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	text-align:center;
+}
+
+.ships li {
 	display: inline-block;
-	opacity: 0;
 }
 
-.js-ship-fade {
-	-webkit-animation: ship-fade 1s linear forwards;
+.ships img {
+	width: 150px;
+	opacity:0;
+	transform: translateY(140px)
 }
 
-.js-ship-1-3 {
-	-webkit-animation: ship-1-3 1s linear forwards;
+.js-ships-animate {
+	-webkit-animation: ships-animate 1s ease-out forwards;
 }
 
-.js-ship-2-4 {
-	-webkit-animation: ship-2-4 1s linear forwards;
+.ships li:first-child img {
+	-webkit-animation-delay: 100ms;
 }
 
-@-webkit-keyframes ship-fade {
+.ships li:last-child img {
+	-webkit-animation-delay: 300ms;
+}
+
+.ships li:nth-child(2) img {
+	-webkit-animation-delay: 200ms;
+}
+
+
+@-webkit-keyframes ships-animate {
 	0% {
 		opacity: 0;
+		transform: translateY(140px)
 	}
-	100% {
+	
+	40% {
 		opacity: 1;
 	}
-}
-
-@-webkit-keyframes ship-1-3 {
-	25% {
-		transform: translateY(100px);
-	}
+	
 	100% {
-		transform: translateY(0px);
+		opacity: 1;
+		transform: translateY(0)
 	}
 }
 
-@-webkit-keyframes ship-2-4 {
-	0% {
-		transform: translateY(100px);
-	}
-	100% {
-		transform: translateY(0px);
-	}
-}
 
 
 
